@@ -1,0 +1,45 @@
+{
+    "name": "tai-plugin-5",
+    "description": "Native segwit sorted multisig m of 3",
+    "version": "1.0.0",
+    "platformVersion": "1.9.0",
+    "author": "Bakaoh <taitt@nunchuk.io>",
+    "license": "MIT",
+    "screenshot": "screenshot.png",
+    "logo": "logo.png",
+    "hashTags": ["multisig", "official"],
+    "template": {
+        "type": "descriptor",
+        "value": "wsh(sortedmulti({m},{PK0},{PK1},{PK2}))",
+        "configure": [
+            {
+                "name": "m",
+                "type": "number",
+                "descripton": "Number of required signatures",
+                "min": 1,
+                "max": 3,
+                "default": 3
+            }
+        ],
+        "fields": [
+            {
+                "name": "PK0",
+                "type": "key",
+                "description": "Pubkey or xpub 1",
+                "require": true
+            },
+            {
+                "name": "PK1",
+                "type": "key",
+                "description": "Pubkey or xpub 2",
+                "require": true
+            },
+            {
+                "name": "PK2",
+                "type": "key",
+                "description": "Pubkey or xpub 3",
+                "require": true
+            }
+        ]
+    }
+}
